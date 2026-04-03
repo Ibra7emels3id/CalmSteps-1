@@ -1,16 +1,26 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
-
-/**
- * Footer Component
- * Design Philosophy: Clean, organized information architecture
- * - Multiple sections for services, company info, and contact
- * - Social media links
- * - RTL layout support
- */
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const paymentImages = [
+    "mada_mini.png",
+    "credit_card_mini.png",
+    "stc_pay_mini.png",
+    "apple_pay_mini.png",
+    "tabby_installment_mini.png",
+    "tamara_installment_mini.png",
+    "mispay_installment_mini.png",
+    "customer_wallet_mini.png",
+  ];
 
   return (
     <footer className="bg-dark-slate text-white py-12">
@@ -117,6 +127,63 @@ export default function Footer() {
                 <p className="text-gray-300 text-sm">
                   الرياض، المملكة العربية السعودية
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Link Payments */}
+        <div className="flex flex-col md:flex-row  justify-between gap-4">
+          <div className="flex">
+            <ul className="flex flex-wrap gap-3 items-center justify-center">
+              {paymentImages.map((img, index) => (
+                <li
+                  key={index}
+                  className="s-payments-list-item bg-green-50 rounded-lg p-1"
+                >
+                  <img
+                    src={`https://cdn.salla.network/images/payment/${img}`}
+                    alt={img}
+                    className="w-[40px] h-[40px] object-contain hover:scale-110 transition duration-300"
+                    loading="lazy"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+            <div className="flex items-center justify-center gap-3 text-green-50">
+              <img
+                src="https://cdn.salla.network/images/commercial-register.png"
+                alt="السجل التجاري"
+                className="w-[55px] h-[55px] object-contain"
+              />
+
+              <div className="flex flex-col text-right">
+                <p className="text-sm">السجل التجاري</p>
+                <b className="text-lg">1010359452</b>
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-4">
+              {/* Certificate */}
+              <a
+                href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000004926"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2"
+              >
+                <img
+                  src="https://cdn.salla.network/images/sbc.png"
+                  alt="certificate"
+                  className="w-16 h-16 object-contain hover:scale-105 transition duration-300"
+                  loading="lazy"
+                />
+              </a>
+
+              {/* Tax Number */}
+              <div className="flex flex-col items-center gap-1 text-green-50">
+                <p className="text-sm">الرقم الضريبي</p>
+                <b className="text-lg">310218485500003</b>
               </div>
             </div>
           </div>

@@ -12,6 +12,8 @@ import Booking from "./pages/Booking";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import Branches from "./pages/Branches";
+
 
 function Router() {
   return (
@@ -24,6 +26,7 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-conditions"} component={TermsConditions} />
+      <Route path={"/branches"} component={Branches} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

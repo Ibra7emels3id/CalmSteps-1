@@ -6,28 +6,31 @@ import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
 import { ChevronDown, Star, Users, Award, Clock } from "lucide-react";
 
-
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-   const heroSlides = [
+  const heroSlides = [
     {
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-hero-fullscreen-1-3oPxASfuBmb6cJRxYuHa8N.webp",
+      image:
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-hero-fullscreen-1-3oPxASfuBmb6cJRxYuHa8N.webp",
       title: "خطوات الهدوء",
-      subtitle: "اكتشف الاسترخاء الحقيقي مع خدمات مساج احترافية للرجال في الرياض",
+      subtitle:
+        "اكتشف الاسترخاء الحقيقي مع خدمات مساج احترافية للرجال في الرياض",
       cta1: "احجز جلستك الآن",
       cta2: "اعرف المزيد",
     },
     {
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-hero-fullscreen-2-XcizAM9JA9fjVocf3fpZYk.webp",
+      image:
+        "../../public/img/56a9028b-52b5-484d-8d08-b4ad208eba16-1000x543.webp",
       title: "مساج استرخاء عميق",
       subtitle: "تخلص من التوتر والإجهاد مع جلسات مساج متخصصة وآمنة",
       cta1: "احجز الآن",
       cta2: "اعرف الخدمات",
     },
     {
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-hero-fullscreen-3-QxGuo3dRvcKjkMGrTG7vpV.webp",
+      image:
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-hero-fullscreen-3-QxGuo3dRvcKjkMGrTG7vpV.webp",
       title: "جودة عالية وخبرة",
       subtitle: "معالجون محترفون بخبرة 10+ سنوات في مجال المساج العلاجي",
       cta1: "احجز الآن",
@@ -66,7 +69,7 @@ export default function Home() {
     },
   ];
 
-    // Auto-rotate carousel every 5 seconds
+  // Auto-rotate carousel every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -105,8 +108,7 @@ export default function Home() {
     {
       id: 2,
       question: "كم مدة الجلسة الواحدة؟",
-      answer:
-        "تتراوح مدة الجلسة بين 30 إلى 90 دقيقة حسب نوع المساج المختار.",
+      answer: "تتراوح مدة الجلسة بين 30 إلى 90 دقيقة حسب نوع المساج المختار.",
     },
     {
       id: 3,
@@ -117,8 +119,7 @@ export default function Home() {
     {
       id: 4,
       question: "هل هناك عروض خاصة أو خصومات؟",
-      answer:
-        "نعم، نقدم عروضاً خاصة للعملاء الدائمين وحزم الجلسات المتعددة.",
+      answer: "نعم، نقدم عروضاً خاصة للعملاء الدائمين وحزم الجلسات المتعددة.",
     },
   ];
 
@@ -200,10 +201,14 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/booking">
-                  <span className="btn-primary inline-block cursor-pointer px-8 py-3 text-lg">احجز جلستك الآن</span>
+                  <span className="btn-primary inline-block cursor-pointer px-8 py-3 text-lg">
+                    احجز جلستك الآن
+                  </span>
                 </Link>
                 <Link href="/services">
-                  <span className="inline-block cursor-pointer px-8 py-3 text-lg bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-lg hover:bg-white/30 transition-all">اعرف المزيد</span>
+                  <span className="inline-block cursor-pointer px-8 py-3 text-lg bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-lg hover:bg-white/30 transition-all">
+                    اعرف المزيد
+                  </span>
                 </Link>
               </div>
             </motion.div>
@@ -246,9 +251,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-dark-slate mb-4">
-              خدماتنا
-            </h2>
+            <h2 className="text-4xl font-bold text-dark-slate mb-4">خدماتنا</h2>
             <p className="text-lg text-dark-slate/70">
               نقدم مجموعة متنوعة من خدمات المساج المتخصصة
             </p>
@@ -395,6 +398,91 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Loction  */}
+
+      <section className="py-20 bg-gradient-to-b from-dark-slate to-dark-slate">
+        <div className="container">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              فروعنا
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              مراكزنا متواجدة في جميع مناطق الرياض .. حد وجريتك
+            </p>
+          </motion.div>
+
+          {/* Branches Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              {
+                name: "الرمال",
+                icon: "🏢",
+                color: "from-blue-500 to-blue-600",
+              },
+              {
+                name: "وادي لين",
+                icon: "🌳",
+                color: "from-green-500 to-green-600",
+              },
+              {
+                name: "الشفا",
+                icon: "🏙️",
+                color: "from-purple-500 to-purple-600",
+              },
+              {
+                name: "العليا",
+                icon: "✨",
+                color: "from-yellow-500 to-yellow-600",
+              },
+              {
+                name: "الرسالات",
+                icon: "🎯",
+                color: "from-red-500 to-red-600",
+              },
+            ].map((branch, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group h-full flex flex-col">
+                  {/* Card Header with Gradient */}
+                  <div
+                    className={`bg-gradient-to-r ${branch.color} p-6 text-center`}
+                  >
+                    <span className="text-5xl block">{branch.icon}</span>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <h3 className="text-xl font-bold text-white mb-4 text-center">
+                      {branch.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm text-center mb-6">
+                      فرع متخصص بخدمات مساج احترافية
+                    </p>
+
+                    {/* Button */}
+                    <Link href="/branches">
+                      <span className="block w-full py-3 bg-soft-green text-dark-slate font-semibold rounded-lg text-center transition-all duration-300 cursor-pointer hover:opacity-90 group-hover:shadow-lg">
+                        تواصل معنا
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-20 bg-dark-slate text-white">
         <div className="container text-center">
@@ -403,14 +491,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">
-              هل أنت مستعد للاسترخاء؟
-            </h2>
+            <h2 className="text-4xl font-bold mb-6">هل أنت مستعد للاسترخاء؟</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               احجز جلستك الآن واستمتع بتجربة مساج احترافية لا تُنسى
             </p>
             <Link href="/booking">
-              <a className="inline-block px-8 py-4 bg-soft-green text-white font-semibold rounded-lg transition-all duration-300" style={{ cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>
+              <a
+                className="inline-block px-8 py-4 bg-soft-green text-white font-semibold rounded-lg transition-all duration-300"
+                style={{ cursor: "pointer" }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
                 احجز الآن
               </a>
             </Link>
@@ -418,5 +509,7 @@ export default function Home() {
         </div>
       </section>
     </MainLayout>
+
+    //
   );
 }

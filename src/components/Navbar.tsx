@@ -14,6 +14,7 @@ export default function Navbar() {
     { href: "/about", label: "من نحن" },
     { href: "/services", label: "الخدمات" },
     { href: "/pricing", label: "الأسعار" },
+    { href: "/branches", label: "الفروع" },
     { href: "/contact", label: "اتصل بنا" },
   ];
 
