@@ -4,10 +4,11 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../../public/img/logo.png";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const whatsappNumber = "+966578656379";
 
+  
   const navLinks = [
     { href: "/", label: "الرئيسية" },
     { href: "/about", label: "من نحن" },
@@ -21,7 +22,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-beige border-b border-soft-gray" style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07)' }}>
+    <nav
+      className="sticky top-0 z-50 bg-beige border-b border-soft-gray"
+      style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.07)" }}
+    >
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -45,7 +49,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button - Desktop */}
-          <Link href="/booking">
+          <Link href={`https://wa.me/${whatsappNumber}?text={"مرحبا، أود الاستفسار عن خدماتكم"}`}>
             <span className="hidden md:inline-block btn-primary text-sm cursor-pointer">
               احجز الآن
             </span>

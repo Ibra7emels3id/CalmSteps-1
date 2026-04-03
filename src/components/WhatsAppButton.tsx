@@ -1,16 +1,9 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-/**
- * WhatsApp Floating Button Component
- * Design Philosophy: Fixed position, non-intrusive CTA
- * - Soft green color matching brand
- * - Smooth hover animation
- * - Opens WhatsApp chat on click
- */
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "966500000000"; // Saudi Arabia format
+  const whatsappNumber = "+966578656379"; // Saudi Arabia format
   const whatsappMessage = "مرحبا، أود الاستفسار عن خدماتكم";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
