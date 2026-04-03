@@ -7,8 +7,8 @@ import logo from "../../public/img/logo.png";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const whatsappNumber = "+966578656379";
+  const message = encodeURIComponent("مرحبا، أود الاستفسار عن خدماتكم");
 
-  
   const navLinks = [
     { href: "/", label: "الرئيسية" },
     { href: "/about", label: "من نحن" },
@@ -49,11 +49,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button - Desktop */}
-          <Link href={`https://wa.me/${whatsappNumber}?text={"مرحبا، أود الاستفسار عن خدماتكم"}`}>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${message}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="hidden md:inline-block btn-primary text-sm cursor-pointer">
               احجز الآن
             </span>
-          </Link>
+          </a>
 
           {/* Mobile Menu Toggle */}
           <button
