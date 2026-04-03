@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "types": ["node", "vite"],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
     }
   }
 }
