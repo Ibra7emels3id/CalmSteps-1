@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import logo from "../../public/img/logo.png";
 
 
 export default function Navbar() {
@@ -27,7 +28,7 @@ export default function Navbar() {
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
               <div className=" flex items-center justify-center">
-                <img src="../../public/img/logo.png" alt="" className="w-32" />
+                <img src={logo} alt="" className="w-32" />
               </div>
             </div>
           </Link>
