@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
 import { ChevronDown, Star, Users, Award, Clock } from "lucide-react";
+import image2 from "../../public/img/56a9028b-52b5-484d-8d08-b4ad208eba16-1000x543.webp";
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -21,8 +22,7 @@ export default function Home() {
       cta2: "اعرف المزيد",
     },
     {
-      image:
-        "../../public/img/56a9028b-52b5-484d-8d08-b4ad208eba16-1000x543.webp",
+      image: image2,
       title: "مساج استرخاء عميق",
       subtitle: "تخلص من التوتر والإجهاد مع جلسات مساج متخصصة وآمنة",
       cta1: "احجز الآن",
@@ -424,26 +424,31 @@ export default function Home() {
                 name: "الرمال",
                 icon: "🏢",
                 color: "from-blue-500 to-blue-600",
+                number: "966500000001",
               },
               {
                 name: "وادي لين",
                 icon: "🌳",
                 color: "from-green-500 to-green-600",
+                number: "966500000002",
               },
               {
                 name: "الشفا",
                 icon: "🏙️",
                 color: "from-purple-500 to-purple-600",
+                number: "966500000003",
               },
               {
                 name: "العليا",
                 icon: "✨",
                 color: "from-yellow-500 to-yellow-600",
+                number: "966500000004",
               },
               {
-                name: "الرسالات",
+                name: "المرسلات",
                 icon: "🎯",
                 color: "from-red-500 to-red-600",
+                number: "966500000005",
               },
             ].map((branch, index) => (
               <motion.div
@@ -457,7 +462,30 @@ export default function Home() {
                   <div
                     className={`bg-gradient-to-r ${branch.color} p-6 text-center`}
                   >
-                    <span className="text-5xl block">{branch.icon}</span>
+                    <span className="text-5xl block">
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-10 h-10 mx-auto"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M3.37892 10.2236L8 16L12.6211 10.2236C13.5137 9.10788 14 7.72154 14 6.29266V6C14 2.68629 11.3137 0 8 0C4.68629 0 2 2.68629 2 6V6.29266C2 7.72154 2.4863 9.10788 3.37892 10.2236ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z"
+                            fill="#ffffff"
+                          ></path>{" "}
+                        </g>
+                      </svg>
+                    </span>
                   </div>
 
                   {/* Card Body */}
@@ -470,11 +498,11 @@ export default function Home() {
                     </p>
 
                     {/* Button */}
-                    <Link href="/branches">
+                    <a href={`tel:${branch.number}`} className="group-hover:flex items-center justify-center">
                       <span className="block w-full py-3 bg-soft-green text-dark-slate font-semibold rounded-lg text-center transition-all duration-300 cursor-pointer hover:opacity-90 group-hover:shadow-lg">
                         تواصل معنا
                       </span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -482,7 +510,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-20 bg-dark-slate text-white">
         <div className="container text-center">

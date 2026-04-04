@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row  justify-between gap-4">
           <div className="flex">
             <ul className="flex flex-wrap gap-3 items-center justify-center">
-              {paymentImages.map((img, index) => (
+              {paymentImages.map((img, index , title) => (
                 <li
                   key={index}
                   className="s-payments-list-item bg-green-50 rounded-lg p-1"
@@ -146,6 +146,7 @@ export default function Footer() {
                     alt={img}
                     className="w-[40px] h-[40px] object-contain hover:scale-110 transition duration-300"
                     loading="lazy"
+                    title={img.split("_mini")[0].replace(/_/g, " ")}
                   />
                 </li>
               ))}
