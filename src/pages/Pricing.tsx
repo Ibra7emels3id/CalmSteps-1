@@ -5,13 +5,6 @@ import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
 import { Check } from "lucide-react";
 
-/**
- * Pricing Page
- * Design Philosophy: Clear, transparent pricing with package options
- * - Service pricing
- * - Package deals
- * - Special offers
- */
 
 export default function Pricing() {
   const packages = [
@@ -19,7 +12,7 @@ export default function Pricing() {
       id: 1,
       name: "الجلسة الواحدة",
       description: "جلسة واحدة من خدمات المساج",
-      price: "من 100 ر.س",
+      price: "من 120 ر.س",
       features: [
         "مساج احترافي",
         "مدة 30-60 دقيقة",
@@ -32,7 +25,7 @@ export default function Pricing() {
       id: 2,
       name: "باقة الشهر",
       description: "4 جلسات في الشهر",
-      price: "500 ر.س",
+      price: "550 ر.س",
       features: [
         "4 جلسات شهرية",
         "توفير 100 ر.س",
@@ -46,7 +39,7 @@ export default function Pricing() {
       id: 3,
       name: "باقة الربع سنة",
       description: "12 جلسة في 3 أشهر",
-      price: "1400 ر.س",
+      price: "1500 ر.س",
       features: [
         "12 جلسة",
         "توفير 300 ر.س",
@@ -193,9 +186,7 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-
-                  <Link href="/booking">
-                    <a
+                    <a href="https://wa.me/966578656379"
                       className={`block w-full py-3 rounded-lg font-semibold text-center transition-all duration-300 ${
                         pkg.highlighted
                           ? "bg-soft-green text-white hover:opacity-90"
@@ -204,7 +195,6 @@ export default function Pricing() {
                     >
                       احجز الآن
                     </a>
-                  </Link>
                 </div>
               </motion.div>
             ))}

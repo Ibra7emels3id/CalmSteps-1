@@ -418,38 +418,38 @@ export default function Home() {
           </motion.div>
 
           {/* Branches Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 name: "الرمال",
                 icon: "🏢",
                 color: "from-blue-500 to-blue-600",
-                number: "966500000001",
+                number: "+966 50 311 0736",
               },
               {
                 name: "وادي لين",
-                icon: "🌳",
+                icon: "🏢",
                 color: "from-green-500 to-green-600",
-                number: "966500000002",
+                number: "+966 55 732 3909",
               },
               {
                 name: "الشفا",
-                icon: "🏙️",
+                icon: "🏢",
                 color: "from-purple-500 to-purple-600",
-                number: "966500000003",
+                number: "+966 55 390 8272",
               },
               {
                 name: "العليا",
-                icon: "✨",
+                icon: "🏢",
                 color: "from-yellow-500 to-yellow-600",
-                number: "966500000004",
+                number: "+966 53 539 9309",
               },
-              {
-                name: "المرسلات",
-                icon: "🎯",
-                color: "from-red-500 to-red-600",
-                number: "966500000005",
-              },
+            //   {
+            //     name: "المرسلات",
+            //     icon: "🏢",
+            //     color: "from-red-500 to-red-600",
+            //     number: "966500000005",
+            //   },
             ].map((branch, index) => (
               <motion.div
                 key={index}
@@ -460,7 +460,7 @@ export default function Home() {
                 <div className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group h-full flex flex-col">
                   {/* Card Header with Gradient */}
                   <div
-                    className={`bg-gradient-to-r ${branch.color} p-6 text-center`}
+                    className={`bg-gradient-to-r bg-soft-green bg-clip p-6 text-center`}
                   >
                     <span className="text-5xl block">
                       <svg
@@ -498,7 +498,10 @@ export default function Home() {
                     </p>
 
                     {/* Button */}
-                    <a href={`tel:${branch.number}`} className="group-hover:flex items-center justify-center">
+                    <a
+                      href={`tel:${branch.number}`}
+                      className="group-hover:flex items-center justify-center"
+                    >
                       <span className="block w-full py-3 bg-soft-green text-dark-slate font-semibold rounded-lg text-center transition-all duration-300 cursor-pointer hover:opacity-90 group-hover:shadow-lg">
                         تواصل معنا
                       </span>

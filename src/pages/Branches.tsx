@@ -19,14 +19,15 @@ const Branches = () => {
   const branches = [
     {
       id: 1,
-      name: "فرع الرياض - النخيل",
+      name: "فرع الرياض - العليا",
       nameEn: "Riyadh - Al Nakheel Branch",
-      address: "شارع النخيل، حي النخيل، الرياض",
-      phone: "+966 11 123 4567",
-      email: "alnakheel@khotawat.com",
+      address: "شارع ابن اياس الكناني ، حي العليا الرياض",
+      phone: "+966 53 539 9309",
+      email: "info@calmstepspa.com",
       googleRating: 4.8,
       googleReviews: 245,
-      googleMapsUrl: "https://maps.google.com/?q=25.2048,55.2708",
+      googleMapsUrl: "https://maps.app.goo.gl/4wh2v2vRTjS9NXbV9?g_st=ic",
+      GoogleMapHtml: `https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3624.523552130298!2d46.67238868500015!3d24.708899984125722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQyJzMyLjAiTiA0NsKwNDAnMTIuNyJF!5e0!3m2!1sar!2ssa!4v1775401234484!5m2!1sar!2ssa`,
       latitude: 25.2048,
       longitude: 55.2708,
       hours: {
@@ -345,7 +346,7 @@ const Branches = () => {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDummyKey&q=${branch.latitude},${branch.longitude}`}
+                  src={branch.GoogleMapHtml}
                   title={branch.name}
                 />
               </motion.div>

@@ -4,14 +4,6 @@ import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
 import { Award, Users, Heart, Zap } from "lucide-react";
 
-/**
- * About Page
- * Design Philosophy: Build trust and credibility
- * - Company mission and values
- * - Team expertise
- * - Why choose us
- */
-
 export default function About() {
   const values = [
     {
@@ -75,9 +67,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl font-bold text-dark-slate mb-6">
-              من نحن
-            </h1>
+            <h1 className="text-5xl font-bold text-dark-slate mb-6">من نحن</h1>
             <p className="text-xl text-dark-slate/70 leading-relaxed">
               خطوات الهدوء هي وجهتك الأولى للاسترخاء والعافية في الرياض
             </p>
@@ -98,8 +88,8 @@ export default function About() {
             </h2>
             <p className="text-lg text-dark-slate/70 leading-relaxed mb-6">
               في خطوات الهدوء، نؤمن أن الاسترخاء والعافية حق أساسي لكل شخص. نسعى
-              لتوفير خدمات مساج احترافية عالية الجودة تجمع بين التقنيات التقليدية
-              والحديثة لتحقيق أقصى استفادة صحية.
+              لتوفير خدمات مساج احترافية عالية الجودة تجمع بين التقنيات
+              التقليدية والحديثة لتحقيق أقصى استفادة صحية.
             </p>
             <p className="text-lg text-dark-slate/70 leading-relaxed">
               فريقنا المتخصص مكرس لتقديم تجربة فريدة وآمنة في بيئة هادئة وراقية،
@@ -169,12 +159,36 @@ export default function About() {
                 className="bg-beige rounded-lg p-8 text-center shadow-soft"
               >
                 <div className="w-20 h-20 bg-soft-green rounded-full mx-auto mb-4 overflow-hidden flex items-center justify-center">
-                  <img
+                  {/* <img
                     src="https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-relaxation-KWA7U4VWXSnSe7yn2bDehx.webp"
                     alt={member.name}
                     className="w-full h-full object-cover"
                     loading="lazy"
-                  />
+                  /> */}
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-10 h-10 text-white"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <path
+                        d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                        fill="#ffffff"
+                      ></path>{" "}
+                      <path
+                        d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                        fill="#ffffff"
+                      ></path>{" "}
+                    </g>
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-dark-slate mb-2">
                   {member.name}
@@ -211,8 +225,7 @@ export default function About() {
               },
               {
                 title: "فريق متخصص",
-                description:
-                  "معالجون مدربون على أعلى مستويات التدريب الدولية",
+                description: "معالجون مدربون على أعلى مستويات التدريب الدولية",
               },
               {
                 title: "بيئة هادئة وآمنة",
@@ -220,8 +233,7 @@ export default function About() {
               },
               {
                 title: "أسعار منافسة",
-                description:
-                  "نقدم أفضل قيمة مقابل الخدمات عالية الجودة",
+                description: "نقدم أفضل قيمة مقابل الخدمات عالية الجودة",
               },
               {
                 title: "حجز سهل",
@@ -230,8 +242,7 @@ export default function About() {
               },
               {
                 title: "رضا العملاء",
-                description:
-                  "أكثر من 1000 عميل راضي عن خدماتنا",
+                description: "أكثر من 1000 عميل راضي عن خدماتنا",
               },
             ].map((item, index) => (
               <motion.div

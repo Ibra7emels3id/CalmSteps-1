@@ -2,24 +2,26 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
-import { Clock, Users, Award } from "lucide-react";
-
-/**
- * Services Page
- * Design Philosophy: Showcase all services with detailed information
- * - Service categories
- * - Detailed descriptions
- * - Benefits and features
- */
+import {
+  Clock,
+  Users,
+  Award,
+  Zap,
+  Dumbbell,
+  Heart,
+  Headphones,
+  Footprints,
+  Waves,
+} from "lucide-react";
 
 export default function Services() {
   const services = [
     {
       id: 1,
-      title: "مساج استرخاء",
-      price: "150 ر.س",
+      title: "مساج الفاخر",
+      price: "180 ر.س",
       duration: "60 دقيقة",
-      icon: "🧘",
+      icon: Zap,
       description:
         "مساج كلاسيكي يساعد على تخفيف التوتر والإجهاد والاسترخاء العميق",
       benefits: [
@@ -31,77 +33,77 @@ export default function Services() {
     },
     {
       id: 2,
-      title: "مساج رياضي",
-      price: "180 ر.س",
+      title: "الحمام المغربي والمساج",
+      price: "245 ر.س",
       duration: "60 دقيقة",
-      icon: "💪",
+      icon: Dumbbell,
       description:
-        "مساج متخصص للرياضيين لتحسين الأداء الرياضي والتعافي من الإصابات",
+        "تجربة حمام مغربي تقليدي مع مساج استرخائي لتجديد الجسم والعقل",
       benefits: [
-        "تحسين الأداء الرياضي",
-        "تسريع التعافي من الإصابات",
-        "تقليل الآلام العضلية",
+        "تطقوس الحمام المغربي",
+        "تنقيت المسام وتجديد خلاصة الجلد",
+        "مساج استرخائي لتخفيف التوتر",
         "زيادة المرونة والحركة",
       ],
     },
     {
       id: 3,
-      title: "مساج علاجي",
-      price: "200 ر.س",
+      title: "العناية الكاملة والمساج الطبي",
+      price: "399 ر.س",
       duration: "60 دقيقة",
-      icon: "🏥",
+      icon: Heart,
       description:
-        "مساج طبي متخصص لتخفيف الآلام المزمنة والإصابات والحالات الطبية",
+        "مساج طبي متخصص يركز على تخفيف الألم وتحسين الصحة العامة والعافية",
       benefits: [
-        "تخفيف الآلام المزمنة",
-        "علاج الإصابات الرياضية",
-        "تحسين الحركة والمرونة",
-        "تسريع الشفاء",
+        "حمام مغربي ملكي فاخر",
+        "العناية بالوجة والجسم",
+        "العناية بالقدمين ",
+        "العناية باليدين",
       ],
     },
     {
       id: 4,
-      title: "مساج الرأس والرقبة",
-      price: "100 ر.س",
-      duration: "30 دقيقة",
-      icon: "🎯",
-      description:
-        "مساج متخصص لتخفيف التوتر من الرأس والرقبة والأكتاف",
+      title: "باقة Vip ",
+      price: "400 ر.س",
+      duration: "60 دقيقة",
+      icon: Headphones,
+      description: "تجربة متكاملة من الاسترخاء والعناية الشخصية في جلسة واحدة",
       benefits: [
-        "تخفيف الصداع",
-        "تقليل توتر الرقبة",
+        "تجربة متكاملة من الاسترخاء والعناية الشخصية",
+        "تخفيف التوتر والإجهاد",
         "تحسين الدورة الدموية",
-        "تخفيف الإجهاد",
+        "تحسين جودة النوم",
+        "تقليل الآلام العضلية",
       ],
     },
     {
       id: 5,
-      title: "مساج القدمين",
-      price: "120 ر.س",
-      duration: "45 دقيقة",
-      icon: "🦶",
-      description:
-        "مساج انعكاسي للقدمين يحسن الصحة العامة والاسترخاء",
+      title: "الاسترخاص الملكي",
+      price: "250 ر.س",
+      duration: "90 دقيقة",
+      icon: Footprints,
+      description: "مساج انعكاسي للقدمين يحسن الصحة العامة والاسترخاء",
       benefits: [
         "تحسين الدورة الدموية",
         "تخفيف آلام القدمين",
         "تحسين الصحة العامة",
         "استرخاء عميق",
+        "تقليل الآلام العضلية",
       ],
     },
     {
       id: 6,
-      title: "مساج الظهر",
-      price: "160 ر.س",
+      title: "مساج استرخاء شاملة (VIP)",
+      price: "350 ر.س",
       duration: "60 دقيقة",
-      icon: "🔙",
-      description:
-        "مساج متخصص للظهر يخفف الآلام والتوتر",
+      icon: Waves,
+      description: "مساج شامل يركز على الاسترخاء العميق وتحسين الصحة العامة ",
       benefits: [
-        "تخفيف آلام الظهر",
-        "تحسين الوضعية",
-        "تقليل التوتر العضلي",
-        "تحسين المرونة",
+        "حمام مغربي ملكي",
+        "مساج استرخاء شامل",
+        "سنفرة الجسم والتدليك",
+        "تنظيف البشرة وتجديدها",
+        "تحسين الصحة العامة",
       ],
     },
   ];
@@ -122,9 +124,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl font-bold text-dark-slate mb-6">
-              خدماتنا
-            </h1>
+            <h1 className="text-5xl font-bold text-dark-slate mb-6">خدماتنا</h1>
             <p className="text-xl text-dark-slate/70 leading-relaxed">
               نقدم مجموعة متنوعة من خدمات المساج المتخصصة لتلبية احتياجاتك
             </p>
@@ -145,29 +145,18 @@ export default function Services() {
                 className="bg-beige rounded-lg overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300"
               >
                 {/* Service Image */}
-                {/* <div className="h-48 bg-gray-200 overflow-hidden">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-relaxation-KWA7U4VWXSnSe7yn2bDehx.webp"
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div> */}
-
                 {/* Service Header */}
                 <div className="bg-soft-green p-6 text-center">
-                  <div className="text-5xl mb-3">{service.icon}</div>
+                  <service.icon className="w-16 h-16 mx-auto mb-4 text-white" />
                   <h3 className="text-2xl font-bold text-white">
                     {service.title}
                   </h3>
                 </div>
-
                 {/* Service Content */}
                 <div className="p-6">
                   <p className="text-dark-slate/70 mb-6 leading-relaxed">
                     {service.description}
                   </p>
-
                   {/* Service Info */}
                   <div className="flex items-center justify-between mb-6 pb-6 border-b border-soft-gray">
                     <div className="flex items-center gap-2">
@@ -180,12 +169,9 @@ export default function Services() {
                       {service.price}
                     </div>
                   </div>
-
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="font-bold text-dark-slate mb-3">
-                      الفوائد:
-                    </h4>
+                    <h4 className="font-bold text-dark-slate mb-3">الفوائد:</h4>
                     <ul className="space-y-2">
                       {service.benefits.map((benefit, i) => (
                         <li key={i} className="flex items-start gap-2">
@@ -199,11 +185,13 @@ export default function Services() {
                       ))}
                     </ul>
                   </div>
-
                   {/* CTA Button */}
-                  <button className="w-full btn-primary text-sm">
+                  <a
+                    href="https://wa.me/966578656379"
+                    className="w-full btn-primary text-center text-sm"
+                  >
                     احجز الآن
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -233,14 +221,12 @@ export default function Services() {
               {
                 icon: Users,
                 title: "رعاية شخصية",
-                description:
-                  "نقدم رعاية مخصصة لكل عميل حسب احتياجاته الفردية",
+                description: "نقدم رعاية مخصصة لكل عميل حسب احتياجاته الفردية",
               },
               {
                 icon: Clock,
                 title: "مرونة الأوقات",
-                description:
-                  "نعمل بأوقات مرنة لتناسب جدولك اليومي",
+                description: "نعمل بأوقات مرنة لتناسب جدولك اليومي",
               },
             ].map((item, index) => {
               const Icon = item.icon;
