@@ -6,6 +6,14 @@ import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
 import { ChevronDown, Star, Users, Award, Clock } from "lucide-react";
 import image2 from "../../public/img/56a9028b-52b5-484d-8d08-b4ad208eba16-1000x543.webp";
+import {
+  Zap,
+  Dumbbell,
+  Heart,
+  Headphones,
+  Footprints,
+  Waves,
+} from "lucide-react";
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -41,31 +49,93 @@ export default function Home() {
   const services = [
     {
       id: 1,
-      title: "مساج استرخاء",
-      description: "مساج كلاسيكي يخفف التوتر والإجهاد",
-      icon: "🧘",
-      price: "150 ر.س",
+      title: "مساج الفاخر",
+      price: "180 ر.س",
+      duration: "60 دقيقة",
+      icon: Zap,
+      description:
+        "مساج كلاسيكي يساعد على تخفيف التوتر والإجهاد والاسترخاء العميق",
+      benefits: [
+        "تخفيف التوتر والإجهاد",
+        "تحسين الدورة الدموية",
+        "تحسين جودة النوم",
+        "تقليل الآلام العضلية",
+      ],
     },
     {
       id: 2,
-      title: "مساج رياضي",
-      description: "مساج متخصص لتحسين الأداء الرياضي",
-      icon: "💪",
-      price: "180 ر.س",
+      title: "الحمام المغربي والمساج",
+      price: "245 ر.س",
+      duration: "60 دقيقة",
+      icon: Dumbbell,
+      description:
+        "تجربة حمام مغربي تقليدي مع مساج استرخائي لتجديد الجسم والعقل",
+      benefits: [
+        "تطقوس الحمام المغربي",
+        "تنقيت المسام وتجديد خلاصة الجلد",
+        "مساج استرخائي لتخفيف التوتر",
+        "زيادة المرونة والحركة",
+      ],
     },
     {
       id: 3,
-      title: "مساج علاجي",
-      description: "مساج طبي لتخفيف الآلام والإصابات",
-      icon: "🏥",
-      price: "200 ر.س",
+      title: "العناية الكاملة والمساج الطبي",
+      price: "399 ر.س",
+      duration: "60 دقيقة",
+      icon: Heart,
+      description:
+        "مساج طبي متخصص يركز على تخفيف الألم وتحسين الصحة العامة والعافية",
+      benefits: [
+        "حمام مغربي ملكي فاخر",
+        "العناية بالوجة والجسم",
+        "العناية بالقدمين ",
+        "العناية باليدين",
+      ],
     },
     {
       id: 4,
-      title: "مساج الرأس والرقبة",
-      description: "تخفيف التوتر من الرأس والرقبة والأكتاف",
-      icon: "🎯",
-      price: "100 ر.س",
+      title: "باقة Vip ",
+      price: "400 ر.س",
+      duration: "60 دقيقة",
+      icon: Headphones,
+      description: "تجربة متكاملة من الاسترخاء والعناية الشخصية في جلسة واحدة",
+      benefits: [
+        "تجربة متكاملة من الاسترخاء والعناية الشخصية",
+        "تخفيف التوتر والإجهاد",
+        "تحسين الدورة الدموية",
+        "تحسين جودة النوم",
+        "تقليل الآلام العضلية",
+      ],
+    },
+    {
+      id: 5,
+      title: "الاسترخاص الملكي",
+      price: "250 ر.س",
+      duration: "90 دقيقة",
+      icon: Footprints,
+      description: "مساج انعكاسي للقدمين يحسن الصحة العامة والاسترخاء",
+      benefits: [
+        "تحسين الدورة الدموية",
+        "تخفيف آلام القدمين",
+        "تحسين الصحة العامة",
+        "استرخاء عميق",
+        "تقليل الآلام العضلية",
+      ],
+    },
+    {
+      id: 6,
+      title: "مساج استرخاء شاملة (VIP)",
+      price: "350 ر.س",
+      duration: "60 دقيقة",
+      icon: Waves,
+      description: "مساج شامل يركز على الاسترخاء العميق وتحسين الصحة العامة ",
+      benefits: [
+        "حمام مغربي ملكي",
+        "مساج استرخاء شامل",
+        "سنفرة الجسم والتدليك",
+        "تنظيف البشرة وتجديدها",
+        "تحسين الصحة العامة",
+      ],
     },
   ];
 
@@ -242,54 +312,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-20 bg-beige">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-b from-beige to-white">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-dark-slate mb-4">خدماتنا</h2>
-            <p className="text-lg text-dark-slate/70">
-              نقدم مجموعة متنوعة من خدمات المساج المتخصصة
+            <h1 className="text-5xl font-bold text-dark-slate mb-6">خدماتنا</h1>
+            <p className="text-xl text-dark-slate/70 leading-relaxed">
+              نقدم مجموعة متنوعة من خدمات المساج المتخصصة لتلبية احتياجاتك
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Services Preview */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 shadow-soft hover:shadow-lg transition-all duration-300"
+                className="bg-beige rounded-lg overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-dark-slate mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-dark-slate/60 text-sm mb-4">
-                  {service.description}
-                </p>
-                <p className="text-soft-green font-bold text-lg">
-                  {service.price}
-                </p>
+                {/* Service Image */}
+                {/* Service Header */}
+                <div className="bg-soft-green p-6 text-center">
+                  <service.icon className="w-16 h-16 mx-auto mb-4 text-white" />
+                  <h3 className="text-2xl font-bold text-white">
+                    {service.title}
+                  </h3>
+                </div>
+                {/* Service Content */}
+                <div className="p-6">
+                  <p className="text-dark-slate/70 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  {/* Service Info */}
+                  <div className="flex items-center justify-between mb-6 pb-6 border-b border-soft-gray">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-5 h-5 text-soft-green" />
+                      <span className="text-dark-slate font-semibold">
+                        {service.duration}
+                      </span>
+                    </div>
+                    <div className="text-2xl font-bold text-soft-green">
+                      {service.price}
+                    </div>
+                  </div>
+                  {/* Benefits */}
+                  <div className="mb-6">
+                    <h4 className="font-bold text-dark-slate mb-3">الفوائد:</h4>
+                    <ul className="space-y-2">
+                      {service.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-soft-green font-bold mt-1">
+                            •
+                          </span>
+                          <span className="text-dark-slate/70 text-sm">
+                            {benefit}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* CTA Button */}
+                  <a
+                    href="https://wa.me/966578656379"
+                    className="w-full btn-primary text-center text-sm"
+                  >
+                    احجز الآن
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-center mt-12"
-          >
-            <Link href="/services">
-              <a className="btn-primary inline-block">عرض جميع الخدمات</a>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -444,12 +547,12 @@ export default function Home() {
                 color: "from-yellow-500 to-yellow-600",
                 number: "+966 53 539 9309",
               },
-            //   {
-            //     name: "المرسلات",
-            //     icon: "🏢",
-            //     color: "from-red-500 to-red-600",
-            //     number: "966500000005",
-            //   },
+              //   {
+              //     name: "المرسلات",
+              //     icon: "🏢",
+              //     color: "from-red-500 to-red-600",
+              //     number: "966500000005",
+              //   },
             ].map((branch, index) => (
               <motion.div
                 key={index}
