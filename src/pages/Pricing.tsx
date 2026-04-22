@@ -3,54 +3,10 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet";
 import MainLayout from "@/layout/MainLayout";
 import { seoConfig } from "@/hooks/useSEO";
-import { Check } from "lucide-react";
+import Product from "./components/Product.jsx";
 
 
 export default function Pricing() {
-  const packages = [
-    {
-      id: 1,
-      name: "الجلسة الواحدة",
-      description: "جلسة واحدة من خدمات المساج",
-      price: "من 120 ر.س",
-      features: [
-        "مساج احترافي",
-        "مدة 30-60 دقيقة",
-        "بيئة هادئة",
-        "معالج مدرب",
-      ],
-      highlighted: false,
-    },
-    {
-      id: 2,
-      name: "باقة الشهر",
-      description: "4 جلسات في الشهر",
-      price: "550 ر.س",
-      features: [
-        "4 جلسات شهرية",
-        "توفير 100 ر.س",
-        "أولوية في الحجز",
-        "معالج مخصص",
-        "استشارة مجانية",
-      ],
-      highlighted: true,
-    },
-    {
-      id: 3,
-      name: "باقة الربع سنة",
-      description: "12 جلسة في 3 أشهر",
-      price: "1500 ر.س",
-      features: [
-        "12 جلسة",
-        "توفير 300 ر.س",
-        "أولوية عالية في الحجز",
-        "معالج مخصص",
-        "استشارات مجانية",
-        "عروض خاصة إضافية",
-      ],
-      highlighted: false,
-    },
-  ];
 
   const servicesPricing = [
     {
@@ -102,105 +58,18 @@ export default function Pricing() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl font-bold text-dark-slate mb-6">
-              الأسعار
-            </h1>
+            <h3 className="text-5xl font-bold text-dark-slate mb-6">
+              باقات خطوات الهدوء 
+            </h3>
             <p className="text-xl text-dark-slate/70 leading-relaxed">
-              أسعار منافسة وشفافة لجميع خدماتنا
+              اختر الباقة المناسبة لك واستمتع بخدمات فاخرة بأسعار منافسة
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="mb-12 rounded-lg overflow-hidden shadow-lg h-80"
-          >
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663508342394/VHd8t6UyWwuT7hRmAew2oY/massage-spa-interior-HeAobXXoD2GhmQpAj2xa5b.webp"
-              alt="بيئة السبا
-"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-4xl font-bold text-dark-slate mb-12 text-center"
-          >
-            الباقات الشهرية
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={pkg.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className={`rounded-lg overflow-hidden shadow-soft transition-all duration-300 ${
-                  pkg.highlighted
-                    ? "ring-2 ring-soft-green transform scale-105"
-                    : ""
-                }`}
-              >
-                {/* Header */}
-                <div
-                  className={`p-8 text-center ${
-                    pkg.highlighted
-                      ? "bg-soft-green text-white"
-                      : "bg-beige text-dark-slate"
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <span className="inline-block bg-light-brown text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
-                      الأكثر شهرة
-                    </span>
-                  )}
-                  <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                  <p className={pkg.highlighted ? "text-white/80" : ""}>
-                    {pkg.description}
-                  </p>
-                </div>
-
-                {/* Price */}
-                <div className="p-8 text-center border-b border-soft-gray">
-                  <div className="text-4xl font-bold text-soft-green">
-                    {pkg.price}
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="p-8">
-                  <ul className="space-y-4 mb-8">
-                    {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <Check className="w-5 h-5 text-soft-green flex-shrink-0" />
-                        <span className="text-dark-slate">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                    <a href="https://wa.me/966578656379"
-                      className={`block w-full py-3 rounded-lg font-semibold text-center transition-all duration-300 ${
-                        pkg.highlighted
-                          ? "bg-soft-green text-white hover:opacity-90"
-                          : "bg-beige text-dark-slate border-2 border-soft-green hover:bg-soft-green hover:text-white"
-                      }`}
-                    >
-                      احجز الآن
-                    </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Product/>
 
       {/* Services Pricing */}
       <section className="py-20 bg-beige">
@@ -210,7 +79,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1 }}
             className="text-4xl font-bold text-dark-slate mb-12 text-center"
           >
-            أسعار الخدمات
+            أسعار الخدمات الفردية
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

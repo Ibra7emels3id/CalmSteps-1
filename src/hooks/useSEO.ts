@@ -1,8 +1,3 @@
-/**
- * SEO Hook for managing page metadata
- * Provides consistent SEO configuration across pages
- */
-
 interface SEOConfig {
   title: string;
   description: string;

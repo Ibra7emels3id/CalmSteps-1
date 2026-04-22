@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -13,24 +13,37 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import Branches from "./pages/Branches";
+import { useEffect } from "react";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/about"} component={About} />
-      <Route path={"/services"} component={Services} />
-      <Route path={"/pricing"} component={Pricing} />
-      <Route path={"/booking"} component={Booking} />
-      <Route path={"/contact"} component={Contact} />
-      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
-      <Route path={"/terms-conditions"} component={TermsConditions} />
-      <Route path={"/branches"} component={Branches} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/about"} component={About} />
+        <Route path={"/services"} component={Services} />
+        <Route path={"/pricing"} component={Pricing} />
+        <Route path={"/booking"} component={Booking} />
+        <Route path={"/contact"} component={Contact} />
+        <Route path={"/privacy-policy"} component={PrivacyPolicy} />
+        <Route path={"/terms-conditions"} component={TermsConditions} />
+        <Route path={"/branches"} component={Branches} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
