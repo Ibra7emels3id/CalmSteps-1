@@ -29,7 +29,14 @@ const Success = () => {
 
     return (
         <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>✅ Payment Successful</h1>
+            <h3>✅ Payment Successful</h3>
+            <p>شكراً لك على الدفع! سيتم التواصل معك قريباً لتأكيد الحجز.</p>
+                <p>إذا كان لديك أي استفسار، لا تتردد في التواصل معنا عبر الواتساب.</p>
+                <a href="https://wa.me/966544567890" target="_blank" rel="noopener noreferrer">واتساب</a>
+                {/* home */}
+                <p style={{ marginTop: "20px" }}>
+                    <a href="/" style={{ color: "#4CAF50", textDecoration: "underline" }}>العودة إلى الصفحة الرئيسية</a>
+                </p>
         </div>
     );
 };

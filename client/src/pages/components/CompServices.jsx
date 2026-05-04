@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import {
     Clock,
@@ -9,9 +9,13 @@ import {
     Hand,
     Waves,
     Scissors,
+    Eye,
 } from "lucide-react";
+import { useServices } from '../../store/useServices';
+import { Link } from 'wouter';
 
 const CompServices = () => {
+    const { FetchServices, services, ServiceLoading } = useServices();
     // Data Service Categories
     const serviceCategories = [
         {
@@ -220,6 +224,11 @@ const CompServices = () => {
         },
     ];
 
+    // Fetch Services
+    useEffect(() => {
+        FetchServices();
+    }, []);
+
     return (
         <section section className="pb-20  bg-white" >
             <div className="container">
@@ -246,38 +255,64 @@ const CompServices = () => {
 
                                 {/* Services Grid */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {categoryGroup.services.map((service, serviceIndex) => (
+                                    {services.filter((service) => service.category === categoryGroup.category)?.map((service, serviceIndex) => (
                                         <motion.div
-                                            key={service.id}
+                                            key={service?._id}
                                             initial={{ opacity: 0, y: 20 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{ delay: serviceIndex * 0.05 }}
-                                            className="bg-beige rounded-lg p-6 shadow-soft hover:shadow-lg transition-all duration-300 border border-soft-gray/30 hover:border-soft-green/50"
+                                            className="rounded-lg shadow-soft hover:shadow-lg transition-all duration-300 border border-soft-gray/30 hover:border-soft-green/50 overflow-hidden"
                                         >
-                                            {/* Service Title */}
-                                            <h3 className="text-xl font-bold text-dark-slate mb-4">
-                                                {service.title}
-                                            </h3>
-
-                                            {/* Service Info */}
-                                            <div className="flex items-center justify-between">
-                                                {service.duration !== "-" && (
-                                                    <div className="flex items-center gap-2">
-                                                        <Clock className="w-5 h-5 text-soft-green" />
-                                                        <span className="text-sm text-dark-slate/70">
-                                                            {service.duration}
-                                                        </span>
-                                                    </div>
-                                                )}
-                                                <div className="text-2xl font-bold text-soft-green">
-                                                    {service.price}
+                                            {/* Image Section */}
+                                            <div className="relative h-48 w-full">
+                                                <img
+                                                    src={service?.image || 'https://via.placeholder.com/400x200'}
+                                                    alt={service?.name}
+                                                    loading="lazy"
+                                                    className="absolute inset-0 w-full h-full object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                                <div className="absolute bottom-0 right-0 p-4 text-white">
+                                                    <h3 className="text-2xl font-bold mb-1">
+                                                        {service?.name}
+                                                    </h3>
                                                 </div>
                                             </div>
 
-                                            {/* CTA Button */}
-                                            <button className="w-full btn-primary text-sm mt-6">
-                                                احجز الآن
-                                            </button>
+                                            {/* Content Section */}
+                                            <div className="bg-beige p-6">
+                                                {/* discription */}
+                                                <div className="py-3">
+                                                    <p className="text-md text-dark-slate/70">
+                                                        {service?.description}
+                                                    </p>
+                                                </div>
+                                                {/* Service Info */}
+                                                <div className="flex items-center justify-between">
+                                                    {service?.duration && (
+                                                        <div className="flex items-center gap-2">
+                                                            <Clock className="w-5 h-5 text-soft-green" />
+                                                            <span className="text-sm text-dark-slate/70">
+                                                                {service?.duration}
+                                                            </span>
+                                                        </div>
+                                                    )}
+                                                    <div className="text-2xl font-bold text-soft-green">
+                                                        {service?.price} ر.س  {service?.disPrice && <span className="line-through text-sm text-dark-slate/70">{service?.disPrice} ر.س</span>}
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex items-center justify-between gap-2 mt-6">
+                                                    {/* CTA Button */}
+                                                    <Link href={`/booking`} className=" btn-primary text-sm w-11/12 flex items-center justify-center">
+                                                        احجز الآن
+                                                    </Link>
+                                                    {/* view button by Icon */}
+                                                    <button className=" btn-primary text-sm ">
+                                                        <Eye className="w-5 h-5" />
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </motion.div>
                                     ))}
                                 </div>

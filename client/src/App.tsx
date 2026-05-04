@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import Branches from "./pages/Branches";
+import Payment from "./pages/Payment";
 import Success from "./pages/Success";
 import { useEffect } from "react";
 
@@ -40,7 +41,9 @@ function Router() {
         <Route path={"/privacy-policy"} component={PrivacyPolicy} />
         <Route path={"/terms-conditions"} component={TermsConditions} />
         <Route path={"/branches"} component={Branches} />
+        <Route path={"/payment"} component={Payment} />
         <Route path={"/success"} component={Success} />
+
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

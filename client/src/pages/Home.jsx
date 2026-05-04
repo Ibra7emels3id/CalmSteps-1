@@ -160,7 +160,7 @@ export default function Home() {
                     ))}
                 </div>
 
-                {/* Content Overlay */}
+                {/* Hero Content */}
                 <div className="relative z-10 h-full flex items-center justify-center">
                     <div className="container">
                         <motion.div
